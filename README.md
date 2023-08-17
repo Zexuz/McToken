@@ -18,3 +18,11 @@ Owner: 0x9EAbf288a308a46Ea37009132886228BF476Eb7F
 
 Next step:
 * Add token A and token B liquidity to the pool on Mumbi
+* Should call approve on the token contract to allow the router to transfer tokens on behalf of the user
+* Or maybe rewrite the pool contract so we don't need to call approve
+* We could do this by creating a internal ledger for each user, so add 
+
+
+
+### NO, the thing we do is expand so that after every mint call. You also call the approve function on the token contract. That way, the CCIP router can transfer tokens on behalf of the user.
+
